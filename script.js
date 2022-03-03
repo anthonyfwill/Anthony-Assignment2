@@ -15,9 +15,15 @@ function addR() {
         };
         row.appendChild(col);
         grid.appendChild(row);
-
+    } else {
+        let row = document.createElement("tr");
+        col.onclick = function (){
+            this.style.backgroundColor = colorSelected;
+        };
+        row.appendChild(col);
     }
 }
+
 //Adds a column
 function addC() {
     //alert("Clicked Add Col")
