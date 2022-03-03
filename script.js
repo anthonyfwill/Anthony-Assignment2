@@ -17,6 +17,11 @@ function addR() {
         grid.appendChild(row);
     } else {
         let row = document.createElement("tr");
+        let col = document.createElement("td");
+        col.onclick = function (){
+            this.style.backgroundColor = colorSelected;
+        };
+        row.appendChild(col);
         grid.appendChild(row);
     }
 }
