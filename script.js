@@ -1,15 +1,13 @@
-let numRows = 0;
-let numCols = 0;
 let colorSelected; 
 
-//Add a row
+//Adds a row
 function addR() {
-    alert("Clicked Add Row")
+    //alert("Clicked Add Row")
     let grid = document.getElementById("grid");
     let rows = document.getElementsByTagName("tr");
     console.log(rows.length);
-
-    if (row.length === 0) {
+    
+    if (rows.length === 0) {
         let row = document.createElement("tr");
         let col = document.createElement("td");
         col.onclick = function (){
@@ -17,14 +15,17 @@ function addR() {
         };
         row.appendChild(col);
         grid.appendChild(row);
+
     }
 }
-//Add a column
+//Adds a column
 function addC() {
-    alert("Clicked Add Col")
+    //alert("Clicked Add Col")
+    let cols = document.getElementsByTagName("td");
+    console.log(cols.length); 
 }
 
-//Remove a row
+//Removes a row
 function removeR() {
     alert("Clicked Remove Row")
 }
@@ -49,4 +50,3 @@ function clearAll(){
 function fillU(){
     alert("Clicked Fill All Uncolored")
 }
-styles.css

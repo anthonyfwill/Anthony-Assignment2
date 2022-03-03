@@ -3,7 +3,7 @@ tr,td{
     border-style: solid;
 }
 td{
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 100px;
     background-color: white;
 }
