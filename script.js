@@ -31,6 +31,29 @@ function addC() {
     //alert("Clicked Add Col")
     let cols = document.getElementsByTagName("td");
     console.log(cols.length); 
+    let grid = document.getElementById("grid");
+    let rows = document.getElementsByTagName("tr");
+    console.log(rows.length);
+    
+    if (rows.length === 0) {
+        let row = document.createElement("tr");
+        let col = document.createElement("td");
+        col.onclick = function (){
+            this.style.backgroundColor = colorSelected;
+        };
+        row.appendChild(col);
+        grid.appendChild(row);
+    } else {
+        for (let row of grid) {
+            let col = document.createElement("td");
+            col.onclick = function (){
+                this.style.backgroundColor = colorSelected;
+            };
+            row.appendChild(col);
+            grid.appendChild(row);
+        }
+    }
+
 }
 
 //Removes a row
