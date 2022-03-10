@@ -71,7 +71,7 @@ function removeR() {
     console.log(rows.length);
     console.log(last_row);
     if (rows.length === 0) {
-      let cols = document.getElementsByTagNames("td");
+      let cols = document.getElementsByTagName("td");
       let cols_count = cols.length;
       for (let i = 0; i < cols_count; i++) {
         cols.removeChild(cols.lastChild);
@@ -123,8 +123,39 @@ function fill(){
 
 function clearAll(){
     alert("Clicked Clear All")
+    let cols = document.getElementsByTagName("td");
+    let rows= document.getElementsByTagName("tr");
+    let cols_count = cols.length;
+    let rows_count = rows.count;
+
+    if (rows_count > cols_count) {
+        for (let i = 0; i < cols_count; i++) {
+            cols.removeChild(cols.lastElementChild);
+            rows.removeChild(rows.lastElementChild);
+        }
+        for (let i = 0; i < rows_count; i++) {
+            rows.removeChild(rows.lastElementChild);
+        }
+    } else {
+        for (let i = 0; i < rows_count; i++) {
+            cols.removeChild(cols.lastElementChild);
+            rows.removeChild(rows.lastElementChild);
+        }
+        for (let i = 0; i < cols_count; i++) {
+            cols.removeChild(cols.lastElementChild);
+        }
+    }
+
 }
 
 function fillU(){
-    alert("Clicked Fill All Uncolored")
+    //alert("Clicked Fill All Uncolored")
+    let rows = document.getElementsByTagName("tr");
+    let cols = document.getElementsByTagName("td");
+    for (let row of rows) {
+      for (let col of row.childNodes) {
+        console.log(col);
+        col.style.backgroundColor = "transparent";
+      }
+    }
 }
