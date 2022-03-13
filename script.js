@@ -122,7 +122,7 @@ function fill(){
 }
 
 function clearAll(){
-    alert("Clicked Clear All")
+    //alert("Clicked Clear All")
     let rows = document.getElementsByTagName("tr");
     let cols = document.getElementsByTagName("td");
     for (let row of rows) {
