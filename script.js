@@ -122,7 +122,7 @@ function fill(){
 }
 
 function clearAll(){
-    //alert("Clicked Clear All")
+    alert("Clicked Clear All")
     let rows = document.getElementsByTagName("tr");
     let cols = document.getElementsByTagName("td");
     for (let row of rows) {
@@ -138,8 +138,9 @@ function fillU(){
     let cols = document.getElementsByTagName("td");
     for (let row of rows) {
       for (let col of row.childNodes) {
-        if (col.style.backgroundColor === "transparent") {
-            col.style.backgroundColor = colorSelected;
+        console.log(col, col.style.backgroundColor);
+        if (col.style.backgroundColor === "transparent" || col.style.backgroundColor === "") {
+          col.style.backgroundColor = colorSelected;
         }
       }
     }
