@@ -123,26 +123,17 @@ function fill(){
 
 function clearAll(){
     alert("Clicked Clear All")
+    let grid = document.getElementById("grid");
     let cols = document.getElementsByTagName("td");
     let rows= document.getElementsByTagName("tr");
     let cols_count = cols.length;
     let rows_count = rows.count;
 
-    if (rows_count > cols_count) {
         for (let i = 0; i < cols_count; i++) {
-            cols.removeChild(cols.lastElementChild);
             rows.removeChild(rows.lastElementChild);
         }
         for (let i = 0; i < rows_count; i++) {
-            rows.removeChild(rows.lastElementChild);
-        }
-    } else {
-        for (let i = 0; i < rows_count; i++) {
-            cols.removeChild(cols.lastElementChild);
-            rows.removeChild(rows.lastElementChild);
-        }
-        for (let i = 0; i < cols_count; i++) {
-            cols.removeChild(cols.lastElementChild);
+            grid.removeChild(grid.lastElementChild);
         }
     }
 
