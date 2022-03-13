@@ -123,20 +123,13 @@ function fill(){
 
 function clearAll(){
     alert("Clicked Clear All")
-    let grid = document.getElementById("grid");
+    let rows = document.getElementsByTagName("tr");
     let cols = document.getElementsByTagName("td");
-    let rows= document.getElementsByTagName("tr");
-    let cols_count = cols.length;
-    let rows_count = rows.count;
-
-        for (let i = 0; i < cols_count; i++) {
-            rows.removeChild(rows.lastElementChild);
-        }
-        for (let i = 0; i < rows_count; i++) {
-            grid.removeChild(grid.lastElementChild);
-        }
+    for (let row of rows) {
+      for (let col of row.childNodes) {
+        col.style.backgroundColor = "transparent";
+      }
     }
-
 }
 
 function fillU(){
@@ -145,8 +138,9 @@ function fillU(){
     let cols = document.getElementsByTagName("td");
     for (let row of rows) {
       for (let col of row.childNodes) {
-        console.log(col);
-        col.style.backgroundColor = "transparent";
+        if (col.style.backgroundColor === "transparent") {
+            col.style.backgroundColor = colorSelected;
+        }
       }
     }
 }
