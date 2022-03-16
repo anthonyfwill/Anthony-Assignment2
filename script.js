@@ -70,7 +70,8 @@ function removeR() {
     let rows = document.getElementsByTagName("tr");
     console.log(rows.length);
     console.log(last_row);
-    
+
+    // Removing the row does not remove the column
     if (rows.length === 0) {
       let cols = document.getElementsByTagName("td");
       let cols_count = cols.length;
@@ -87,11 +88,15 @@ function removeC() {
     let rows = document.getElementsByTagName("tr");
     let cols = document.getElementsByTagName("td");
     console.log(document.querySelectorAll("tr td"));
+
+    // Remove all rows in that column 
     for (let row of rows) {
       let last_col = row.lastElementChild;
       row.removeChild(last_col);
     }
     console.log("length is cols: ", cols.length)
+
+    // Removing the column does not remove the row from the grid
     if (cols.length === 0) {
         console.log("length of rows: ", rows.length);
         let rows_count = rows.length;
@@ -114,6 +119,8 @@ function fill(){
     //alert("Clicked Fill All
     let rows = document.getElementsByTagName("tr");
     let cols = document.getElementsByTagName("td");
+    
+    // Loop through every row to see each column
     for (let row of rows) {
       for (let col of row.childNodes) {
         console.log(col);
@@ -123,7 +130,7 @@ function fill(){
 }
 
 function clearAll(){
-    alert("Clicked Clear All")
+    //alert("Clicked Clear All")
     let rows = document.getElementsByTagName("tr");
     let cols = document.getElementsByTagName("td");
     for (let row of rows) {
@@ -140,6 +147,8 @@ function fillU(){
     for (let row of rows) {
       for (let col of row.childNodes) {
         console.log(col, col.style.backgroundColor);
+
+        // Unless you clear all the backgroundColor === ""
         if (col.style.backgroundColor === "transparent" || col.style.backgroundColor === "") {
           col.style.backgroundColor = colorSelected;
         }
